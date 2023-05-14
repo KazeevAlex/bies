@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/idea")
+@RequestMapping("/api/idea")
 @RequiredArgsConstructor
 public class IdeaController {
 
@@ -32,7 +32,7 @@ public class IdeaController {
 
     @PostMapping
     public Idea addIdea(@RequestBody Idea idea) {
-        idea.setId(0);
+        idea.setId(0L);
         Idea dbIdea = ideaService.save(idea);
         return dbIdea;
     }
