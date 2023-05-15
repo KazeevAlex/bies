@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+/*@RestController
 @RequestMapping("/api/notification")
 @RequiredArgsConstructor
 public class NotificationController {
@@ -19,4 +19,4 @@ public class NotificationController {
     public void notify(@RequestBody IdeaDto ideaDto) {
         notificationService.notify(ideaDto);
     }
-}
+}*/
