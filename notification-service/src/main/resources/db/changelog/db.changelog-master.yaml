@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/sebi-29-create-message-template-table.yaml
+  - include:
+      file: db/changelog/changeset/sebi-29-create-mailing-data-table.yaml
+  - include:
+      file: db/changelog/changeset/sebi-29-fill-message-template-table.yaml

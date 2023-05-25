@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: fill-message-template
+      author: Alex Kazeev
+      changes:
+        - insert:
+            tableName: message_template
+            columns:
+              - column:
+                  name: type
+                  value: "PENDING"
+              - column:
+                  name: subject
+                  value: "A new idea for moderation!"
+              - column:
+                  name: message
+                  value: "New idea with id ideaId ready for moderation."
+        - insert:
+            tableName: message_template
+            columns:
+              - column:
+                  name: type
+                  value: "ACCEPTED_USERS"
+              - column:
+                  name: subject
+                  value: "A new idea for voting!"
+              - column:
+                  name: message
+                  value: "New idea with id ideaId ready for voting."
+        - insert:
+            tableName: message_template
+            columns:
+              - column:
+                  name: type
+                  value: "ACCEPTED_AUTHOR"
+              - column:
+                  name: subject
+                  value: "Your idea is accepted!"
+              - column:
+                  name: message
+                  value: "Congratulations! Your idea with id ideaId is accepted."
+        - insert:
+            tableName: message_template
+            columns:
+              - column:
+                  name: type
+                  value: "DENIED"
+              - column:
+                  name: subject
+                  value: "Your idea is rejected!"
+              - column:
+                  name: message
+                  value: "Unfortunately your idea with id ideaId is rejected."

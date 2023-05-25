@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-mailing-data
+      author: Alex Kazeev
+      changes:
+        - createTable:
+            tableName: mailing_data
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: sending_time
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: idea_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: successfully
+                  type: tinyint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: message_template_type
+                  type: varchar(10)
+                  constraints:
+                    foreignKeyName: author_article_fk
+                    referencedTableName: message_template
+                    referencedColumnNames: type

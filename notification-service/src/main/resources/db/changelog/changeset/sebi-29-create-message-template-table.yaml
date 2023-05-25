@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-message-template
+      author: Alex Kazeev
+      changes:
+        - createTable:
+            tableName: message_template
+            columns:
+              - column:
+                  name: type
+                  type: varchar(20)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: subject
+                  type: varchar(45)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: message
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
