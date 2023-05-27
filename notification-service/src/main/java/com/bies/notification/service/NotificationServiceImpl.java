@@ -1,9 +1,9 @@
 package com.bies.notification.service;
 
 import com.bies.notification.dto.IdeaDto;
-import com.bies.notification.dto.UserDto;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NotificationServiceImpl implements NotificationService{
 
     @Override
