@@ -14,6 +14,11 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/feign")
+    public String testFeign(String role, boolean notifiable) {
+        return role + " " + notifiable;
+    }
+
     @GetMapping
     public List<User> findAll() {
         return userService.findAll();
