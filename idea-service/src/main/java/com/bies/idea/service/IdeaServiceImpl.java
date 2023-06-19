@@ -24,7 +24,7 @@ public class IdeaServiceImpl implements IdeaService {
     @Override
     public Idea findById(int theId) {
         Idea idea = ideaRepository.findById(theId);
-        kafkaTemplate.send("notificationTopic", idea);
+//        kafkaTemplate.send("notificationTopic", idea);
         return ideaRepository.findById(theId);
     }
 
@@ -32,7 +32,7 @@ public class IdeaServiceImpl implements IdeaService {
     @Override
     public Idea save(Idea theIdea) {
         Idea newIdea = ideaRepository.save(theIdea);
-        kafkaTemplate.send("notificationTopic", newIdea);
+//        kafkaTemplate.send("notificationTopic", newIdea);
         return newIdea;
     }
 

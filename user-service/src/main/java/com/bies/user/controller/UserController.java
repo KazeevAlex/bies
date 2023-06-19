@@ -14,6 +14,11 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/home")
+    public String home() {
+        return "Welcome to User Service!";
+    }
+
     @GetMapping("/feign")
     public String testFeign(String role, boolean notifiable) {
         return role + " " + notifiable;

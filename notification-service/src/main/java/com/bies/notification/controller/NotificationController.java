@@ -24,6 +24,11 @@ public class NotificationController {
 //        return messageTemplateService.getTemplate(TemplateType.ACCEPTED_AUTHOR);
 //    }
 
+    @GetMapping("/home")
+    public String home() {
+        return "Welcome to Notification Service!";
+    }
+
     @GetMapping("/feign")
     public String testFeign() {
         return userFeignClient.queryParam("EXPERT", true);
