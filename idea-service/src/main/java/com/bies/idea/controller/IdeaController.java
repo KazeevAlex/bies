@@ -36,7 +36,7 @@ public class IdeaController {
     }
 
     @GetMapping("/expert")
-    public String expert(Authentication authentication, Principal principal) {
+    public String expert(Authentication authentication) {
 //        Jwt jwt = (Jwt) principal;
 //        return jwt.getClaim("realm_access");
 
@@ -49,7 +49,7 @@ public class IdeaController {
     }
 
     @GetMapping("/feign")
-    public String testFeign() {
+    public String testFeign(Authentication authentication) {
         return userFeignClient.queryParam("EXPERT", true);
     }
 

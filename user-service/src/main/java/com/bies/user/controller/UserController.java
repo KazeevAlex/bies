@@ -3,9 +3,12 @@ package com.bies.user.controller;
 import com.bies.user.model.User;
 import com.bies.user.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/user")
@@ -20,8 +23,12 @@ public class UserController {
     }
 
     @GetMapping("/feign")
-    public String testFeign(String role, boolean notifiable) {
+    public String testFeign(String role, boolean notifiable, Authentication authentication) {
         return role + " " + notifiable;
+//        return authentication.getAuthorities()
+//                .stream()
+//                .map(GrantedAuthority::getAuthority)
+//                .collect(Collectors.joining(" "));
     }
 
     @GetMapping
